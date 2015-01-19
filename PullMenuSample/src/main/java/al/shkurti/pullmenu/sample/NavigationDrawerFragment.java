@@ -1,4 +1,4 @@
-package al.shkurti.pullmenu;
+package al.shkurti.pullmenu.sample;
 
 import android.support.v7.app.ActionBarActivity;
 import android.app.Activity;
