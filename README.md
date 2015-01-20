@@ -8,7 +8,7 @@ It can be implemented inside ScrollView, GridView, ListView, WebView, Fragments 
 
 For more information see the website: [AndroidPullMenu](http://shkurtia.github.io/AndroidPullMenu/  "AndroidPullMenu")
 
-**Simple Example:**
+## Simple Example:
 
 The implementation should be easy if you have used this library: [ActionBar-PullToRefresh](https://github.com/chrisbanes/ActionBar-PullToRefresh)
 
@@ -119,7 +119,7 @@ https://news.layervault.com/stories/40871-pull-menu-menu-interaction-concept
 [@castorflex](https://github.com/castorflex):  https://github.com/castorflex/SmoothProgressBar
 
 
-**License**
+## License
 
 Feel free to use it all you want in your Android apps provided that you cite this project and include the license in your app. I would be grateful if you would inform me about its usage: shkurtiarmando(at)gmail(dot)com
 
