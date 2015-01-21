@@ -39,6 +39,7 @@ import android.support.v4.view.ViewCompat;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -96,7 +97,7 @@ public class MenuSlidingTabStrip extends HorizontalScrollView {
 
     private int tabCount;
 
-    private int currentPosition = 0;
+    private int currentPosition = -2;
     private float currentPositionOffset = 0f;
 
     private Paint rectPaint;
@@ -271,7 +272,10 @@ public class MenuSlidingTabStrip extends HorizontalScrollView {
 			default:
 				break;
 			}
-		}
+		} else {
+            View tab = tabsContainer.getChildAt(0);
+            notSelected(tab);
+        }
     	
     }
     
@@ -281,20 +285,26 @@ public class MenuSlidingTabStrip extends HorizontalScrollView {
      * @param position 
      */
     private void setScrollForSix(int position) {
-    	if(DefaultHeaderTransformer.MENU_INDICATOR_MIN_VALUE<position && position<19){
-    		setScrollTo(0);
-    	}else if (19<=position && position < 34){
-    		setScrollTo(1);
-    	}else if (34<=position && position < 50){
-    		setScrollTo(2);
-    	}else if (50<=position && position < 66){
-    		setScrollTo(3);
-    	}else if (66<=position && position < 82){
-    		setScrollTo(4);
-    	}else if (82<=position && position < 100){
-    		setScrollTo(5);
-    	}
-	}
+        if (DefaultHeaderTransformer.MENU_INDICATOR_MIN_VALUE < position) {
+            if (position < 19) {
+                setScrollTo(0);
+            } else if (19 <= position && position < 34) {
+                setScrollTo(1);
+            } else if (34 <= position && position < 50) {
+                setScrollTo(2);
+            } else if (50 <= position && position < 66) {
+                setScrollTo(3);
+            } else if (66 <= position && position < 82) {
+                setScrollTo(4);
+            } else if (82 <= position && position < 100) {
+                setScrollTo(5);
+            }
+
+        } else {
+            View tab = tabsContainer.getChildAt(0);
+            notSelected(tab);
+        }
+    }
 
 	/**
      * Scroll available when there are five items in pull menu
@@ -302,19 +312,24 @@ public class MenuSlidingTabStrip extends HorizontalScrollView {
      * @param position 
      */
     private void setScrollForFive(int position) {
-    	if(DefaultHeaderTransformer.MENU_INDICATOR_MIN_VALUE<position && position<22){
-    		setScrollTo(0);
-    	}else if (22<=position && position < 42){
-    		setScrollTo(1);
-    	}else if (42<=position && position < 62){
-    		setScrollTo(2);
-    	}else if (62<=position && position < 82){
-    		setScrollTo(3);
-    	}else if (82<=position && position < 100){
-    		setScrollTo(4);
-    	}
-		
-	}
+        if (DefaultHeaderTransformer.MENU_INDICATOR_MIN_VALUE < position) {
+            if (position < 22) {
+                setScrollTo(0);
+            } else if (22 <= position && position < 42) {
+                setScrollTo(1);
+            } else if (42 <= position && position < 62) {
+                setScrollTo(2);
+            } else if (62 <= position && position < 82) {
+                setScrollTo(3);
+            } else if (82 <= position && position < 100) {
+                setScrollTo(4);
+            }
+
+        } else {
+            View tab = tabsContainer.getChildAt(0);
+            notSelected(tab);
+        }
+    }
 
 	/**
      * Scroll available when there are four items in pull menu
@@ -322,17 +337,21 @@ public class MenuSlidingTabStrip extends HorizontalScrollView {
      * @param position 
      */
     private void setScrollForFour(int position) {
-    	if(DefaultHeaderTransformer.MENU_INDICATOR_MIN_VALUE<position && position<27){
-    		setScrollTo(0);
-    	}else if (27<=position && position < 52){
-    		setScrollTo(1);
-    	}else if (52<=position && position < 77){
-    		setScrollTo(2);
-    	}else if (77<=position && position < 100){
-    		setScrollTo(3);
-    	}
-		
-	}
+        if (DefaultHeaderTransformer.MENU_INDICATOR_MIN_VALUE < position) {
+            if (position < 27) {
+                setScrollTo(0);
+            } else if (27 <= position && position < 52) {
+                setScrollTo(1);
+            } else if (52 <= position && position < 77) {
+                setScrollTo(2);
+            } else if (77 <= position && position < 100) {
+                setScrollTo(3);
+            }
+        } else {
+            View tab = tabsContainer.getChildAt(0);
+            notSelected(tab);
+        }
+    }
 
 	/**
      * Scroll available when there are three items in pull menu
@@ -340,14 +359,19 @@ public class MenuSlidingTabStrip extends HorizontalScrollView {
      * @param position 
      */
     private void setScrollForThree(int position) {
-    	if(DefaultHeaderTransformer.MENU_INDICATOR_MIN_VALUE<position && position<35){
-    		setScrollTo(0);
-    	}else if (35<=position && position < 68){
-    		setScrollTo(1);
-    	}else if (68<=position && position < 100){
-    		setScrollTo(2);
-    	}
-	}
+        if (DefaultHeaderTransformer.MENU_INDICATOR_MIN_VALUE < position) {
+            if (position < 35) {
+                setScrollTo(0);
+            } else if (35 <= position && position < 68) {
+                setScrollTo(1);
+            } else if (68 <= position && position < 100) {
+                setScrollTo(2);
+            }
+        } else {
+            View tab = tabsContainer.getChildAt(0);
+            notSelected(tab);
+        }
+    }
 
 	/**
      * Scroll available when there are two items in pull menu
@@ -356,14 +380,23 @@ public class MenuSlidingTabStrip extends HorizontalScrollView {
      */
   	private void setScrollForTwo(int position) {
 		
-  		if(DefaultHeaderTransformer.MENU_INDICATOR_MIN_VALUE<position && position<50){
-    		setScrollTo(0);
-    	}else if (50<=position && position < 100){
-    		setScrollTo(1);
-    	}
+  		if(DefaultHeaderTransformer.MENU_INDICATOR_MIN_VALUE<position){
+            if( position<50){
+                setScrollTo(0);
+            }else if (50<=position && position < 100){
+                setScrollTo(1);
+            }
+        }else{
+               View tab = tabsContainer.getChildAt(0);
+               notSelected(tab);
+        }
 	}
 
 	public void setScrollTo(int position){
+        if(currentPosition == position && position!=0){// these means that we are in that position so dont take further steps
+            return;
+        }
+
   		currentPosition = position;
         currentPositionOffset = 0;
         int offset = tabCount > 0 ? (int) (0 * tabsContainer.getChildAt(position).getWidth()) : 0;
@@ -426,9 +459,9 @@ public class MenuSlidingTabStrip extends HorizontalScrollView {
  
               //TODO we should receive the position of view that we are
               // and  the actions that it has
-                currentPosition =  0;//pager.getCurrentItem();
+                currentPosition =  -2;//pager.getCurrentItem();
                 currentPositionOffset = 0f;
-                scrollToChild(currentPosition, 0);
+                scrollToChild(0, 0);
                 updateSelection(currentPosition);
             }
         });
@@ -438,7 +471,7 @@ public class MenuSlidingTabStrip extends HorizontalScrollView {
         TextView textView = (TextView) tabView.findViewById(R.id.tab_title);
         if (textView != null) {
             if (title != null) textView.setText(title);
-            float alpha = currentPosition/*pager.getCurrentItem()*/ == position ? tabTextSelectedAlpha : tabTextAlpha;
+            float alpha = /*currentPosition/*pager.getCurrentItem()*/ /*== position ? tabTextSelectedAlpha : */tabTextAlpha;
             ViewCompat.setAlpha(textView, alpha);
         }
 
@@ -454,7 +487,7 @@ public class MenuSlidingTabStrip extends HorizontalScrollView {
 
             if (tab_title != null) {
                 tab_title.setTextSize(TypedValue.COMPLEX_UNIT_PX, tabTextSize);
-                tab_title.setTypeface(tabTypeface, currentPosition == i ? tabTypefaceSelectedStyle : tabTypefaceStyle);
+                tab_title.setTypeface(tabTypeface, /*currentPosition == i ? tabTypefaceSelectedStyle : */tabTypefaceStyle);
                 if (tabTextColor != null) {
                     tab_title.setTextColor(tabTextColor);
                 }
@@ -495,8 +528,8 @@ public class MenuSlidingTabStrip extends HorizontalScrollView {
     }
 
     private Pair<Float, Float> getIndicatorCoordinates() {
-        // default: line below current tab
-        View currentTab = tabsContainer.getChildAt(currentPosition);
+        // default: line below current tab  // this is done because i had enter negative vaule for the begging of currentposition
+        View currentTab = tabsContainer.getChildAt(currentPosition < 0 ? 0: currentPosition );
         float lineLeft = currentTab.getLeft();
         float lineRight = currentTab.getRight();
 

@@ -36,7 +36,7 @@ public class DefaultHeaderTransformer extends HeaderTransformer {
 
     public static final int PROGRESS_BAR_STYLE_INSIDE = 0;
     public static final int PROGRESS_BAR_STYLE_OUTSIDE = 1;
-    public static final int MENU_INDICATOR_MIN_VALUE = 4;
+    public static final int MENU_INDICATOR_MIN_VALUE = 6;
 
     private View mHeaderView;
     private ViewGroup mContentLayout;
@@ -104,7 +104,8 @@ public class DefaultHeaderTransformer extends HeaderTransformer {
         // Reset menu sliding tab strip
         if(mSlidingTabStrip!=null){
         	mSlidingTabStrip.setVisibility(View.VISIBLE);
-            mSlidingTabStrip.setScrollTo(0);//bejm reset
+            mSlidingTabStrip.setScrollTo(0);//we reset
+            mSlidingTabStrip.changeMenuIndicatorPosition(0);//
         }
 
         // Reset the Content Layout

@@ -378,8 +378,11 @@ public class PullMenuAttacher {
             case MotionEvent.ACTION_UP: {
                 checkScrollForRefresh(mViewBeingDragged);
                 if (mIsBeingDragged) {
-                	triggerMenuAction();
-                    onPullEnded();
+                	if(triggerMenuAction()){
+
+                    }else{
+                        onPullEnded();
+                    }
                 }
                 resetTouch();
                 break;
@@ -471,15 +474,46 @@ public class PullMenuAttacher {
     
     /**
      * */
-    private void triggerMenuAction(){
+    private boolean triggerMenuAction(){
     	if(checkIfMenuActionAvailable()){
     		if (mOnRefreshListener != null) {
-                mOnRefreshListener.onRefreshStarted(null, mMenuSlidingTabStrip.getSelectedPosition(),
-                        mMenuSlidingTabStrip.getSelectedField());
-                mMenuSlidingTabStrip.reorderArray();
-    		}
-    		
-    	}
+                if (isDestroyed() || mIsRefreshing) return false;
+
+                resetTouch();
+
+                if (canRefresh(true)) {
+                     // Update isRefreshing state
+                     mIsRefreshing = true;
+
+                    mOnRefreshListener.onRefreshStarted(null, mMenuSlidingTabStrip.getSelectedPosition(),
+                            mMenuSlidingTabStrip.getSelectedField());
+                    mMenuSlidingTabStrip.reorderArray();
+
+                    // Call Transformer
+                    mHeaderTransformer.onRefreshStarted();
+
+                    // Show Header View
+                    showHeaderView();
+
+                    // Post a runnable to minimize the refresh header
+                    if (mRefreshMinimize) {
+                        if (mRefreshMinimizeDelay > 0) {
+                            getHeaderView().postDelayed(mRefreshMinimizeRunnable, mRefreshMinimizeDelay);
+                        } else {
+                            getHeaderView().post(mRefreshMinimizeRunnable);
+                        }
+                    }
+                    return true;
+                } else {
+                    reset(true);
+                    return false;
+                }
+
+
+
+    		}else return false;
+
+    	}else return false;
     }
 
     protected final Activity getAttachedActivity() {
