@@ -112,7 +112,7 @@ demonstration of his [work in codepen.io](http://codepen.io/fbrz/full/bNdMwZ/):
 https://news.layervault.com/stories/40871-pull-menu-menu-interaction-concept
 
 
-## Source code thanks goes to:
+## Special Thanks
 
 [@chrisbanes](https://github.com/chrisbanes):  https://github.com/chrisbanes/ActionBar-PullToRefresh
 
@@ -123,7 +123,7 @@ https://news.layervault.com/stories/40871-pull-menu-menu-interaction-concept
 
 ## License
 
-Feel free to use it all you want in your Android apps provided that you cite this project and include the license in your app. I would be grateful if you would inform me about its usage: shkurtiarmando(at)gmail(dot)com
+Feel free to use it in your Android apps and also include the license in your app. I would be grateful if you would inform me about its usage: shkurtiarmando(at)gmail(dot)com
 
     Copyright 2015 Armando Shkurti
     
