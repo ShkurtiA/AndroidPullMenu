@@ -62,14 +62,8 @@ The implementation should be easy if you have used this library: [ActionBar-Pull
 	        @Override
 	        protected void onPostExecute(Void result) {
 	            super.onPostExecute(result);
-
 	            // Notify PullMenuLayout that the refresh has finished
 	            mPullMenuLayout.setRefreshComplete();
-
-	            /*if (getView() != null) {
-	                // Show the list again
-	                setListShown(true);
-	            }*/
 	        }
 	    }.execute();
 	}   
