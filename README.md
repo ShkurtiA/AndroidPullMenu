@@ -106,6 +106,7 @@ The implementation should be easy if you have used this library: [ActionBar-Pull
 -	Inspired by _Fabrizio Bianchi_: [Pull-Menu-Menu-Interaction-Concept](https://dribbble.com/shots/1827600-Pull-Menu-Menu-Interaction-Concept?list=users&offset=0) 
 demonstration of his work:
 http://codepen.io/fbrz/full/bNdMwZ/
+![Sample](/https://d13yacurqjgara.cloudfront.net/users/645368/screenshots/1827600/prova4.gif)
 
 ##  Opinions for this concept:
 https://news.layervault.com/stories/40871-pull-menu-menu-interaction-concept
