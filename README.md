@@ -98,6 +98,7 @@ The implementation should be easy if you have used this library: [ActionBar-Pull
 
 -	Armando Shkurti  - shkurtiarmando@gmail.com
 
+
 ## Credits:
 Inspired by:
 -	_Fabrizio Bianchi_ - [Pull Menu Interaction Concept](https://dribbble.com/shots/1827600-Pull-Menu-Menu-Interaction-Concept?list=users&offset=0) 
@@ -109,6 +110,7 @@ demonstration of his [work in codepen.io](http://codepen.io/fbrz/full/bNdMwZ/):
 
 ##  Opinions for this concept:
 https://news.layervault.com/stories/40871-pull-menu-menu-interaction-concept
+
 
 ## Source code thanks goes to:
 
