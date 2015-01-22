@@ -6,7 +6,7 @@ AndroidPullMenu is an Open Source Android library that allows developers to easi
 This actions stand for refreshing options like refreshing the latest news, most viewed news, most commented views etc. or adding more actions inside view when you don’t want to implement these actions inside sliding menu. 
 It can be implemented inside ScrollView, GridView, ListView, WebView, Fragments + Tabs.
 
-![sample](/https://raw.githubusercontent.com/ShkurtiA/AndroidPullMenu/master/docs/pull_menu_sample.gif)
+![sample](/docs/pull_menu_sample.gif)
 
 For more information see the website: [AndroidPullMenu](http://shkurtia.github.io/AndroidPullMenu/  "AndroidPullMenu")
 
