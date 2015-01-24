@@ -75,11 +75,15 @@ public class ActionBarPullMenu {
         /**
          * @param pullMenuLayout layout needed to setup pull menu
          * @param textColor color of menu indicator text, int id from resources
+         * @param backgroundColor color of menu background, int id from resources
+         * @param progressBarColor color of menu smooth progress bar, int id from resources
          * @param menuIndicatorItems list of items that will be added to menu indicator
          * */
-        public void setup(PullMenuLayout pullMenuLayout,int textColor, ArrayList<String> menuIndicatorItems) {
+        public void setup(PullMenuLayout pullMenuLayout,int textColor, int backgroundColor, int progressBarColor, ArrayList<String> menuIndicatorItems) {
+
             PullMenuAttacher attacher = pullMenuLayout.createPullToRefreshAttacher(
-                    mActivity, mOptions, textColor, menuIndicatorItems);
+                    mActivity, mOptions, textColor, backgroundColor, progressBarColor, menuIndicatorItems);
+
             attacher.setOnRefreshListener(mOnRefreshListener);
 
             if (mViewGroupToInsertInto != null) {

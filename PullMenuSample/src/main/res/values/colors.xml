@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="menuColor">#303F9F</color>
+    <color name="progressBarColor">#4CAF50</color>
+</resources>

@@ -9,6 +9,8 @@ import al.shkurti.pullmenu.library.listeners.HeaderViewListener;
 import al.shkurti.pullmenu.library.listeners.OnRefreshListener;
 import al.shkurti.pullmenu.library.slidingtabstrip.MenuSlidingTabStrip;
 import al.shkurti.pullmenu.library.viewdelegates.ViewDelegate;
+import fr.castorflex.android.smoothprogressbar.SmoothProgressBar;
+
 import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Context;
@@ -64,7 +66,7 @@ public class PullMenuAttacher {
     MenuSlidingTabStrip mMenuSlidingTabStrip;
     boolean pullStarted,pullEnded;
 
-    protected PullMenuAttacher(Activity activity, Options options,int color, ArrayList<String> mItems) {
+    protected PullMenuAttacher(Activity activity, Options options,int textColor, int backgroundColor, int progresBarColor, ArrayList<String> mItems) {
         if (activity == null) {
             throw new IllegalArgumentException("activity cannot be null");
         }
@@ -105,10 +107,12 @@ public class PullMenuAttacher {
             throw new IllegalArgumentException("Must supply valid layout id for header.");
         }
 
+        mHeaderView.setBackgroundColor(backgroundColor);
+
         //costumize menu tab strip
         mMenuSlidingTabStrip = (MenuSlidingTabStrip) mHeaderView.findViewById(R.id.menuIndicator);
 
-        mMenuSlidingTabStrip.setTextColorResource(color);
+        mMenuSlidingTabStrip.setTextColorResource(textColor);
 
         // set the array for menu items
         mMenuSlidingTabStrip.setArray(mItems);
@@ -117,7 +121,7 @@ public class PullMenuAttacher {
         mHeaderView.setVisibility(View.INVISIBLE);
 
         // Notify transformer
-        mHeaderTransformer.onViewCreated(activity, mHeaderView);
+        mHeaderTransformer.onViewCreated(activity, mHeaderView,progresBarColor);
 
         // Now HeaderView to Activity
         mAddHeaderViewRunnable = new AddHeaderViewRunnable();

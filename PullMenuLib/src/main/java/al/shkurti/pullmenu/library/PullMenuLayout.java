@@ -201,9 +201,9 @@ public class PullMenuLayout extends FrameLayout {
     }
 
     protected PullMenuAttacher createPullToRefreshAttacher(Activity activity,
-            Options options,int color, ArrayList<String> mItems) {
+            Options options,int textColor,  int backgroundColor, int progresBarColor, ArrayList<String> mItems) {
         return new PullMenuAttacher(activity, options != null ? options : new Options(),
-        		color, mItems);
+                textColor, backgroundColor, progresBarColor, mItems);
     }
 
     private void ensureAttacher() {

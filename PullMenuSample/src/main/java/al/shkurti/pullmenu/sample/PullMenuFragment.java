@@ -52,7 +52,9 @@ public class PullMenuFragment extends Fragment implements OnRefreshListener {
         ActionBarPullMenu.from(getActivity())
                 .allChildrenArePullable()
                 .listener(this)
-                .setup(mPullMenuLayout,android.R.color.white,mList);
+                .setup(mPullMenuLayout,android.R.color.white,
+                        getResources().getColor(R.color.menuColor),
+                        getResources().getColor(R.color.progressBarColor),mList);
 
         return rootView;
     }

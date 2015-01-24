@@ -11,6 +11,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.content.res.TypedArray;
+import android.graphics.Color;
 import android.graphics.PixelFormat;
 import android.graphics.drawable.ClipDrawable;
 import android.graphics.drawable.Drawable;
@@ -63,7 +64,7 @@ public class DefaultHeaderTransformer extends HeaderTransformer {
     }
 
     @Override
-    public void onViewCreated(Activity activity, View headerView) {
+    public void onViewCreated(Activity activity, View headerView, int progresBarColor) {
         mHeaderView = headerView;
 
         // Get ProgressBar and MenuSlidingTabStrip
@@ -73,12 +74,13 @@ public class DefaultHeaderTransformer extends HeaderTransformer {
 
         mAnimationDuration = activity.getResources().getInteger(android.R.integer.config_shortAnimTime);
 
-        mProgressDrawableColor = activity.getResources().getColor(R.color.default_progress_bar_color);
+      //  mProgressDrawableColor = activity.getResources().getColor(R.color.default_progress_bar_color);
 
         // Setup the View styles
         setupViewsFromStyles(activity, headerView);
 
-        applyProgressBarStyle();
+        //applyProgressBarStyle();
+        setProgressBarColor(progresBarColor);
 
         // Apply any custom ProgressBar colors and corner radius
         applyProgressBarSettings();
@@ -282,7 +284,7 @@ public class DefaultHeaderTransformer extends HeaderTransformer {
         }
 
         mProgressBarStyle = styleAttrs.getInt(
-                R.styleable.PullMenuHeader_pmProgressBarStyle, PROGRESS_BAR_STYLE_OUTSIDE);
+                R.styleable.PullMenuHeader_pmProgressBarStyle, PROGRESS_BAR_STYLE_INSIDE);
 
         if (styleAttrs.hasValue(R.styleable.PullMenuHeader_pmProgressBarHeight)) {
             mProgressBarHeight = styleAttrs.getDimensionPixelSize(

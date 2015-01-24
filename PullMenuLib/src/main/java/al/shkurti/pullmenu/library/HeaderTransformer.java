@@ -18,7 +18,7 @@ public abstract class HeaderTransformer {
      * @param activity The {@link android.app.Activity} that the header view is attached to.
      * @param headerView The inflated header view.
      */
-    public void onViewCreated(Activity activity, View headerView) {}
+    public void onViewCreated(Activity activity, View headerView, int progresBarColor) {}
 
     /**
      * Called when the header should be reset. You should update any child
