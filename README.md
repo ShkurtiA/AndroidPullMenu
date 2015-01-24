@@ -6,7 +6,7 @@ AndroidPullMenu is an Open Source Android library that allows developers to easi
 This actions stand for refreshing options like refreshing the latest news, most viewed news, most commented views etc. or adding more actions inside view when you don’t want to implement these actions inside sliding menu. 
 It can be implemented inside ScrollView, GridView, ListView, WebView, Fragments + Tabs.
 
-![sample](/docs/pull_menu_sample.gif)
+![sample](/docs/pull_menu_sample_1.gif)
 
 For more information see the website: [AndroidPullMenu](http://shkurtia.github.io/AndroidPullMenu/  "AndroidPullMenu")
 
@@ -62,14 +62,8 @@ The implementation should be easy if you have used this library: [ActionBar-Pull
 	        @Override
 	        protected void onPostExecute(Void result) {
 	            super.onPostExecute(result);
-
 	            // Notify PullMenuLayout that the refresh has finished
 	            mPullMenuLayout.setRefreshComplete();
-
-	            /*if (getView() != null) {
-	                // Show the list again
-	                setListShown(true);
-	            }*/
 	        }
 	    }.execute();
 	}   
@@ -104,16 +98,21 @@ The implementation should be easy if you have used this library: [ActionBar-Pull
 
 -	Armando Shkurti  - shkurtiarmando@gmail.com
 
+
 ## Credits:
--	Inspired by _Fabrizio Bianchi_: [Pull-Menu-Menu-Interaction-Concept](https://dribbble.com/shots/1827600-Pull-Menu-Menu-Interaction-Concept?list=users&offset=0) 
-demonstration of his work:
-http://codepen.io/fbrz/full/bNdMwZ/
+Inspired by:
+-	_Fabrizio Bianchi_ - [Pull Menu Interaction Concept](https://dribbble.com/shots/1827600-Pull-Menu-Menu-Interaction-Concept?list=users&offset=0) 
+demonstration of his [work in codepen.io](http://codepen.io/fbrz/full/bNdMwZ/):
+![concept](/docs/pull_menu_concept.gif)
+
+- [Jolla Sailfish OS - Tell me about the pulley menu](https://www.youtube.com/watch?v=sR9dWo42wU0 "Jolla Sailfish  OS")
 
 
 ##  Opinions for this concept:
 https://news.layervault.com/stories/40871-pull-menu-menu-interaction-concept
 
-## Sources code thanks goes to:
+
+## Special Thanks
 
 [@chrisbanes](https://github.com/chrisbanes):  https://github.com/chrisbanes/ActionBar-PullToRefresh
 
@@ -124,7 +123,7 @@ https://news.layervault.com/stories/40871-pull-menu-menu-interaction-concept
 
 ## License
 
-Feel free to use it all you want in your Android apps provided that you cite this project and include the license in your app. I would be grateful if you would inform me about its usage: shkurtiarmando(at)gmail(dot)com
+Feel free to use it in your Android apps and also include the license in your app. I would be grateful if you would inform me about its usage: shkurtiarmando(at)gmail(dot)com
 
     Copyright 2015 Armando Shkurti
     
