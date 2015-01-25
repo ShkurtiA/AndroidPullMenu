@@ -23,6 +23,7 @@
                 android:id="@+id/filler_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="@string/filler_text" />
         </RelativeLayout>
 
