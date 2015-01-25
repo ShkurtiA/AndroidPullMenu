@@ -1,5 +1,4 @@
-<al.shkurti.pullmenu.library.PullMenuLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<al.shkurti.pullmenu.library.PullMenuLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/pm_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -11,10 +10,22 @@
         android:padding="8dp"
         android:scrollbarStyle="outsideInset">
 
-        <TextView
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/filler_text"/>
+            android:layout_height="wrap_content">
+
+            <com.nhaarman.supertooltips.ToolTipRelativeLayout
+                android:id="@+id/tooltipframelayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/filler_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/filler_text" />
+        </RelativeLayout>
+
 
     </ScrollView>
 

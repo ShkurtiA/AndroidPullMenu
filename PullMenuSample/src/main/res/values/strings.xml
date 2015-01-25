@@ -10,7 +10,9 @@
     <string name="action_example">Example action</string>
     <string name="action_settings">Settings</string>
 
-     <string name="filler_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+    <string name="tip_descr">Pull down to open PullMenu</string>
+
+     <string name="filler_text"> * IN * PE * RA * TO * RE * BT *\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
         sollicitudin mauris varius lacus porttitor eget blandit massa facilisis. Nulla pellentesque
         odio sed purus fermentum vitae viverra orci faucibus. Sed ullamcorper condimentum vulputate.
         Curabitur sit amet convallis velit. Vestibulum posuere eleifend risus ac adipiscing. Nam

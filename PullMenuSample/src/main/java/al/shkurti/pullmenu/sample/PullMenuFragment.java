@@ -1,13 +1,23 @@
 package al.shkurti.pullmenu.sample;
 
 import android.app.Activity;
+import android.content.SharedPreferences;
+import android.content.res.Resources;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import com.nhaarman.supertooltips.ToolTip;
+import com.nhaarman.supertooltips.ToolTipRelativeLayout;
+import com.nhaarman.supertooltips.ToolTipView;
 
 import java.util.ArrayList;
 
@@ -22,6 +32,7 @@ public class PullMenuFragment extends Fragment implements OnRefreshListener {
 
     private static final String ARG_SECTION_NUMBER = "section_number";
     private PullMenuLayout mPullMenuLayout;
+    ToolTipView myToolTipView;
 
     public static PullMenuFragment newInstance(int sectionNumber) {
         PullMenuFragment fragment = new PullMenuFragment();
@@ -56,6 +67,29 @@ public class PullMenuFragment extends Fragment implements OnRefreshListener {
                         getResources().getColor(R.color.menuColor),
                         getResources().getColor(R.color.progressBarColor),mList);
 
+
+        SharedPreferences prefs = getActivity().getSharedPreferences("pullMenu", 0);
+        String restoredText = prefs.getString("menu", null);
+        if(restoredText==null) {
+            TextView mTextView = (TextView) rootView.findViewById(R.id.filler_text);
+
+            int actionBarHeight = 0;
+            TypedValue tv = new TypedValue();
+            if (getActivity().getTheme().resolveAttribute(android.R.attr.actionBarSize, tv, true))
+            {
+                actionBarHeight = TypedValue.complexToDimensionPixelSize(tv.data,getResources().getDisplayMetrics());
+            }
+            mTextView.setPadding(0,actionBarHeight , 0, 0);
+
+            ToolTipRelativeLayout toolTipRelativeLayout = (ToolTipRelativeLayout) rootView.findViewById(R.id.tooltipframelayout);
+
+            ToolTip toolTip = new ToolTip()
+                    .withText(getResources().getString(R.string.tip_descr))
+                    .withTextColor(getResources().getColor(android.R.color.white))
+                    .withColor(getResources().getColor(R.color.tip_color));
+
+            myToolTipView = toolTipRelativeLayout.showToolTipForView(toolTip, mTextView);
+        }
         return rootView;
     }
 
@@ -63,6 +97,18 @@ public class PullMenuFragment extends Fragment implements OnRefreshListener {
     public void onRefreshStarted(View view, int position, String selectedField) {
         // Hide the list
         Toast.makeText(getActivity(), position + " # " + selectedField, Toast.LENGTH_SHORT).show();
+
+        if (myToolTipView != null) {
+            myToolTipView.remove();
+            myToolTipView = null;
+
+            TextView mTextView = (TextView) getActivity().findViewById(R.id.filler_text);
+            mTextView.setPadding(0,0,0,0);
+
+            SharedPreferences.Editor editor = getActivity().getSharedPreferences("pullMenu", 0).edit();
+            editor.putString("menu", "Opened");
+            editor.commit();
+        }
 
         /**
          * Simulate Refresh with 5 seconds sleep

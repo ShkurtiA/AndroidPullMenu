@@ -3,4 +3,5 @@
 
     <color name="menuColor">#303F9F</color>
     <color name="progressBarColor">#4CAF50</color>
+    <color name="tip_color">#009688</color>
 </resources>
