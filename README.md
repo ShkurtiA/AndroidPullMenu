@@ -106,7 +106,7 @@ The implementation should be easy if you have used this library: [ActionBar-Pull
 ## Credits:
 Inspired by:
 -	_Fabrizio Bianchi_ - [Pull Menu Interaction Concept](https://dribbble.com/shots/1827600-Pull-Menu-Menu-Interaction-Concept?list=users&offset=0) 
-demonstration of his [work in codepen.io](http://codepen.io/fbrz/full/bNdMwZ/):
+demonstration of his [work in codepen.io](http://codepen.io/fbrz/details/bNdMwZ/):
 ![concept](/docs/pull_menu_concept.gif)
 
 - [Jolla Sailfish OS - Tell me about the pulley menu](https://www.youtube.com/watch?v=sR9dWo42wU0 "Jolla Sailfish  OS")
