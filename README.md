@@ -1,6 +1,8 @@
 AndroidPullMenu
 ===============
 
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-AndroidPullMenu-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/1449)
+
 AndroidPullMenu is an Open Source Android library that allows developers to easily create applications with pull menu.  The aim of this library is to allow users that with a simple pull gesture to choose actions that they want to be executed. 
 
 This actions stand for refreshing options like refreshing the latest news, most viewed news, most commented views etc. or adding more actions inside view when you don’t want to implement these actions inside sliding menu. 
