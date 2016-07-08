@@ -102,7 +102,7 @@ The implementation should be easy if you have used this library: [ActionBar-Pull
 
 ## Developed by:
 
--	Armando Shkurti  - shkurtiarmando@gmail.com
+-	Armando Shkurti
 
 
 ## Credits:
