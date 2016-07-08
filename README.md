@@ -129,7 +129,7 @@ https://news.layervault.com/stories/40871-pull-menu-menu-interaction-concept
 
 ## License
 
-Feel free to use it in your Android apps and also include the license in your app. I would be grateful if you would inform me about its usage: shkurtiarmando(at)gmail(dot)com
+Feel free to use it in your Android apps and also include the license in your app. I would be grateful if you would inform me about its usage
 
     Copyright 2015 Armando Shkurti
     
